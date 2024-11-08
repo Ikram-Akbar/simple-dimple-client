@@ -1,0 +1,23 @@
+/* src/styles/custom.css */
+.bg-teal {
+  background-color: #008080;
+}
+.bg-teal:hover{
+    background-color: transparent;
+    color: teal;
+    border:1px solid teal;
+}
+
+.my-custom-text {
+  color: #ff6347; /* Tomato color */
+}
+
+.my-custom-button {
+  background-color: #ff6347; /* Tomato color */
+  color: white;
+  border: none;
+}
+
+.my-custom-button:hover {
+  background-color: #ff4500; /* Darker shade on hover */
+}

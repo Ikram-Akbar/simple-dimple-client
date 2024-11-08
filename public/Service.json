@@ -1,0 +1,205 @@
+[
+    {
+        "id": 1,
+        "name": "IT Consulting",
+        "description": "Expert IT consulting services to help you optimize your technology strategy, infrastructure, and operations.",
+        "price": 2000,
+        "features": [
+            "Technology assessment",
+            "Strategic IT planning",
+            "Process improvement",
+            "Cybersecurity assessment",
+            "IT resource management"
+        ],
+        "duration": "1-4 weeks",
+        "rating": 4.7,
+        "imageUrl": "https://i.ibb.co/Pg6qzjZ/2020-it-consulting-group-picture.jpg",
+        "category": "Consulting",
+        "technologies": [
+            "Microsoft Azure",
+            "AWS",
+            "Cisco",
+            "VMware"
+        ],
+        "targetAudience": "Businesses seeking technology guidance",
+        "deliveryMode": "Remote or On-site"
+    },
+    {
+        "id": 2,
+        "name": "Custom Software Development",
+        "description": "Custom software solutions tailored to meet the unique needs of your business, from concept to deployment.",
+        "price": 12000,
+        "features": [
+            "Business analysis",
+            "Custom software design",
+            "Testing and quality assurance",
+            "Deployment and support",
+            "Maintenance and updates"
+        ],
+        "duration": "12-20 weeks",
+        "rating": 4.8,
+        "imageUrl": "https://i.ibb.co/GdffrFw/custom-software-development-can-revolutionize-your-business.jpg",
+        "category": "Software Development",
+        "technologies": [
+            "Java",
+            "C#",
+            "Python",
+            "Node.js",
+            "React"
+        ],
+        "targetAudience": "Businesses with specific software requirements",
+        "deliveryMode": "Remote or On-site"
+    },
+    {
+        "id": 3,
+        "name": "Cloud Solutions",
+        "description": "Reliable cloud solutions to support your business infrastructure, increase flexibility, and ensure data security.",
+        "price": 10000,
+        "features": [
+            "Cloud migration",
+            "Infrastructure setup",
+            "Data security",
+            "Disaster recovery",
+            "Ongoing support"
+        ],
+        "duration": "8-12 weeks",
+        "rating": 4.9,
+        "imageUrl": "https://i.ibb.co/qmp1RQR/cloudcomputing7thaugust2023-2.jpg",
+        "category": "IT Infrastructure",
+        "technologies": [
+            "AWS",
+            "Microsoft Azure",
+            "Google Cloud",
+            "Docker"
+        ],
+        "targetAudience": "Enterprises, IT Companies",
+        "deliveryMode": "Remote"
+    },
+    {
+        "id": 4,
+        "name": "Digital Marketing",
+        "description": "Holistic digital marketing services to improve your online presence, drive traffic, and convert leads.",
+        "price": 4000,
+        "features": [
+            "SEO and SEM",
+            "Content marketing",
+            "Social media management",
+            "Email marketing",
+            "Campaign analytics"
+        ],
+        "duration": "Ongoing",
+        "rating": 4.5,
+        "imageUrl": "https://i.ibb.co/rcCmJkX/DM-blog-post-image-03-guetzli.jpg",
+        "category": "Marketing",
+        "technologies": [
+            "Google Analytics",
+            "Facebook Ads",
+            "Mailchimp",
+            "Hootsuite"
+        ],
+        "targetAudience": "Businesses seeking growth through online marketing",
+        "deliveryMode": "Remote"
+    },
+    {
+        "id": 5,
+        "name": "E-commerce Solutions",
+        "description": "Complete e-commerce development solutions tailored to meet your business needs and provide seamless shopping experiences.",
+        "price": 8000,
+        "features": [
+            "Custom store design",
+            "Shopping cart integration",
+            "Payment gateway setup",
+            "Inventory management",
+            "Customer analytics"
+        ],
+        "duration": "6-10 weeks",
+        "rating": 4.6,
+        "imageUrl": "https://i.ibb.co/DGzD5xN/ecommerce-solutions.jpg",
+        "category": "Software Development",
+        "technologies": [
+            "Shopify",
+            "WooCommerce",
+            "Magento",
+            "Node.js",
+            "React"
+        ],
+        "targetAudience": "Retailers, Brands, Online Stores",
+        "deliveryMode": "Remote or On-site"
+    },
+    {
+        "id": 6,
+        "name": "UI/UX Design",
+        "description": "User-centered design services to create visually appealing and highly usable interfaces for web and mobile applications.",
+        "price": 3000,
+        "features": [
+            "User research",
+            "Wireframing and prototyping",
+            "Custom UI design",
+            "Usability testing",
+            "Design revisions"
+        ],
+        "duration": "2-4 weeks",
+        "rating": 4.7,
+        "imageUrl": "https://i.ibb.co/pKYC3X2/UI-UX.png",
+        "category": "Design",
+        "technologies": [
+            "Adobe XD",
+            "Figma",
+            "Sketch",
+            "InVision"
+        ],
+        "targetAudience": "Businesses seeking user-friendly interfaces",
+        "deliveryMode": "Remote"
+    },
+    {
+        "id": 7,
+        "name": "Web App Development",
+        "description": "End-to-end web application development with a focus on security, performance, and scalability, using the latest technologies.",
+        "price": 7000,
+        "features": [
+            "Responsive web design",
+            "Backend integration",
+            "SEO-friendly structure",
+            "Third-party integrations",
+            "Ongoing maintenance"
+        ],
+        "duration": "6-8 weeks",
+        "rating": 4.9,
+        "imageUrl": "https://i.ibb.co/Hh6ZdVq/Web-Application-Development-1536x864-1.webp",
+        "category": "Software Development",
+        "technologies": [
+            "React",
+            "Angular",
+            "Node.js",
+            "Python",
+            "Django"
+        ],
+        "targetAudience": "Enterprises, Ecommerce, Educational Platforms",
+        "deliveryMode": "On-site or Remote"
+    },
+    {
+        "id": 8,
+        "name": "Mobile App Development",
+        "description": "Comprehensive mobile app development services for Android and iOS platforms, delivering high-performance apps with engaging user experiences.",
+        "price": 5000,
+        "features": [
+            "Custom app design",
+            "Cross-platform compatibility",
+            "User-friendly interface",
+            "API integration",
+            "Maintenance and support"
+        ],
+        "duration": "4-6 weeks",
+        "rating": 4.8,
+        "imageUrl": "https://i.ibb.co/r3BK3sx/App-development-process-Feature-image.jpg",
+        "category": "Software Development",
+        "technologies": [
+            "Flutter",
+            "React Native",
+            "Swift",
+            "Kotlin"
+        ],
+        "targetAudience": "Startups, Small to Medium Businesses",
+        "deliveryMode": "Remote"
+    }
+]
