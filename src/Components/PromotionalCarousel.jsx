@@ -1,51 +1,47 @@
 import { Button, Carousel } from 'react-bootstrap';
 
+const slides = [
+    {
+        image: 'https://i.ibb.co/L6bgJnD/carlos-muza-hpj-Sk-U2-UYSU-unsplash-1.jpg',
+        title: 'Innovate with Us',
+        subtitle: 'Empowering your business through custom web solutions.',
+        description: 'Get 50% off on your first project with Simple Dimple!',
+        buttonText: 'Start Project'
+    },
+    {
+        image: 'https://i.ibb.co/c2z0HfT/marvin-meyer-SYTO3xs06f-U-unsplash-1.jpg',
+        title: 'Boost Your Reach',
+        subtitle: 'Drive traffic and growth with expert SEO strategies.',
+        description: 'Exclusive discounts on SEO services this summer!',
+        buttonText: 'Learn More'
+    },
+    {
+        image: 'https://i.ibb.co/kQQvM3Z/emile-perron-xr-VDYZRGdw4-unsplash-1.jpg',
+        title: 'Transform Ideas into Reality',
+        subtitle: 'Customized apps to suit your unique business needs.',
+        description: 'Join us for a consultation and explore our premium packages.',
+        buttonText: 'Consult Us'
+    }
+];
+
 const PromotionalCarousel = () => (
     <Carousel>
-        {/* Slide 1 */}
-        <Carousel.Item>
-            <img
-                className="d-block w-100"
-                src="https://via.placeholder.com/800x400"
-                alt="First slide"
-                style={{ height: '400px', objectFit: 'cover' }}
-            />
-            <Carousel.Caption>
-                <h3>Exclusive Offer</h3>
-                <p>Get 50% off on your first booking with us!</p>
-                <Button variant='outline-primary'>Buy Now</Button>
-            </Carousel.Caption>
-        </Carousel.Item>
-
-        {/* Slide 2 */}
-        <Carousel.Item>
-            <img
-                className="d-block w-100"
-                src="https://via.placeholder.com/800x400"
-                alt="Second slide"
-                style={{ height: '400px', objectFit: 'cover' }}
-            />
-            <Carousel.Caption>
-                <h3>Summer Special</h3>
-                <p>Book now and enjoy special discounts on summer trips!</p>
-                <Button variant='outline-primary'>Buy Now</Button>
-            </Carousel.Caption>
-        </Carousel.Item>
-
-        {/* Slide 3 */}
-        <Carousel.Item>
-            <img
-                className="d-block w-100"
-                src="https://via.placeholder.com/800x400"
-                alt="Third slide"
-                style={{ height: '400px', objectFit: 'cover' }}
-            />
-            <Carousel.Caption>
-                <h3>Adventure Awaits</h3>
-                <p>Join us for an adventure of a lifetime with our premium packages!</p>
-                <Button variant='outline-primary'>Buy Now</Button>
-            </Carousel.Caption>
-        </Carousel.Item>
+        {slides.map((slide, index) => (
+            <Carousel.Item key={index}>
+                <img
+                    className="d-block w-100"
+                    src={slide.image}
+                    alt={`${slide.title} image`}
+                    style={{ height: '400px', objectFit: 'cover' }}
+                />
+                <Carousel.Caption style={{ backgroundColor: 'rgba(0, 0, 0, 0.82)', padding: '1rem', borderRadius: '8px' }}>
+                    <h3>{slide.title}</h3>
+                    <h5>{slide.subtitle}</h5>
+                    <p>{slide.description}</p>
+                    <Button variant="outline-light">{slide.buttonText}</Button>
+                </Carousel.Caption>
+            </Carousel.Item>
+        ))}
     </Carousel>
 );
 

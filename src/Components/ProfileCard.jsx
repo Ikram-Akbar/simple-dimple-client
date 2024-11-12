@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ProfileCard = () => {
     const { user, logOut } = useAuth();
+    console.log(user);
     const navigate = useNavigate();
     const handleLogOut = () => {
         logOut();
@@ -15,7 +16,7 @@ const ProfileCard = () => {
 
     return (
         <Card style={{ width: '18rem',border:"none" }}>
-            <Card.Img  className="w-25 rounded-circle" variant="top" src={user.photoURL || 'default-profile.jpg'} alt="Profile" />
+            <Card.Img  className="w-25 rounded-circle" variant="top" src={user?.photoURL} alt="Profile" />
             <Card.Body>
                 <Card.Title>{user.displayName}</Card.Title>
                 <Card.Text>{user.email}</Card.Text>

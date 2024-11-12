@@ -10,7 +10,7 @@ const UserBookingList = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/booking?${user?.email}`)
+        axios.get(`http://localhost:5000/api/v1/booking?email=${user?.email}`)
             .then(res => {
                 setBookings(res.data);
             })

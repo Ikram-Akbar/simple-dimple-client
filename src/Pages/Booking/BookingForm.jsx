@@ -92,6 +92,7 @@ const BookingForm = () => {
                                 type="email"
                                 placeholder="Enter your email"
                                 name="email"
+                                readOnly
                                 value={formData?.email}
                                 onChange={handleChange}
                                 required
