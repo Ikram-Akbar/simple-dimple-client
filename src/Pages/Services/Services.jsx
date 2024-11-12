@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, Button, Badge } from "react-bootstrap";
+import { Card, Button, Badge, Row, Container, Col } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
 
 import Loading from "../../Components/Loading";
 import { Link } from "react-router-dom";
+import FindCustomService from "../../Components/FindCustomService";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -16,7 +17,7 @@ const Services = () => {
       .get("http://localhost:5000/api/v1/services")
       .then((response) => {
         setServices(response.data);
-        console.log(response.data);
+        // console.log(response.data);
         setLoading(false);
       })
       .catch((err) => {
@@ -35,11 +36,11 @@ const Services = () => {
   }
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center my-2">Our Services</h2>
-      <div className="row">
+    <Container className=" mt-5">
+      <h2 className="text-center my-3">Our Services</h2>
+      <Row>
         {services.map((service) => (
-          <div className="col-md-4" key={service.id}>
+          <Col md={4}  key={service.id}>
             <Card className="mb-4 shadow-sm shadow-lg p-2">
               <Card.Img
                 style={{ objectFit: "cover", height: "200px" }}
@@ -87,10 +88,15 @@ const Services = () => {
                 </div>
               </Card.Body>
             </Card>
-          </div>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+      <Row>
+        <Col className="border m-2">
+          <FindCustomService/>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

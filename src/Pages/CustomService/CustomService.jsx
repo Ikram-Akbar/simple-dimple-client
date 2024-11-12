@@ -1,9 +1,16 @@
+import CusReqForm from "../../Components/CusReqForm";
+import useAuth from "../Hooks/useAuth";
 
 
 const CustomService = () => {
+    const { user } = useAuth();
     return (
         <div>
-            <h1>add custom service as user want .. </h1>
+            {user ? (
+                <CusReqForm />
+            ) : (
+                <p>Please log in to submit a custom request.</p>
+            )}
         </div>
     );
 };

@@ -11,6 +11,7 @@ import ServicesDetails from "../Pages/Services/ServiceDetails/ServicesDetails";
 import BookingForm from "../Pages/Booking/BookingForm";
 import UserBookingList from "../Pages/userBookingsList/UserBookingList";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
+import CustomService from "../Pages/CustomService/CustomService";
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
             {
                 path: "my-bookings",
                 element: <PrivateRoute><UserBookingList /></PrivateRoute>
+            },
+            {
+                path: "customService",
+                element:<CustomService/>
             },
             {
                 path: "contact",
