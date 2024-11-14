@@ -12,6 +12,7 @@ import BookingForm from "../Pages/Booking/BookingForm";
 import UserBookingList from "../Pages/userBookingsList/UserBookingList";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import CustomService from "../Pages/CustomService/CustomService";
+import ServiceWithFilter from "../Pages/TEST/ServiceWithFilter";
 
 export const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
             {
                 path: "register",
                 element: <Register />
+            },
+            {
+                path: "test",
+                element:<ServiceWithFilter/>
             }
         ]
     }

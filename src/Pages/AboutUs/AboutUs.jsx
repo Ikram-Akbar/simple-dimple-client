@@ -1,4 +1,5 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
+import img from '../../assets/about.webp';
 
 const AboutUs = () => (
     <Container className="my-5">
@@ -16,7 +17,7 @@ const AboutUs = () => (
                 </p>
             </Col>
             <Col md={6}>
-                <Image src="https://via.placeholder.com/500x300" alt="About Us Image" fluid />
+                <Image src={img} alt="About Us Image" fluid />
             </Col>
         </Row>
     </Container>

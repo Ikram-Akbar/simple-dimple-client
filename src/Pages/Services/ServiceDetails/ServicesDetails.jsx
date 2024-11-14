@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Card, Row, Col, ListGroup, Button, Badge, Container } from "react-bootstrap";
 import { FaStar, FaHome, FaCheckCircle } from "react-icons/fa";
-import { motion } from "framer-motion"; // For smooth animations
+import { motion } from "framer-motion";
 import Loading from "../../../Components/Loading";
 import { useService } from "../../Hooks/useService";
 

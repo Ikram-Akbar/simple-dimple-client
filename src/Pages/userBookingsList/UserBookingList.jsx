@@ -17,7 +17,7 @@ const UserBookingList = () => {
             .catch(err => {
                 console.log(err);
             });
-    }, []);
+    }, [user.email]);
 
     const handleDelete = (id) => {
 
@@ -58,7 +58,6 @@ const UserBookingList = () => {
             ) {
                 swalWithBootstrapButtons.fire({
                     title: "Cancelled",
-                   
                     icon: "error"
                 });
             }

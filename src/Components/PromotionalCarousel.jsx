@@ -25,7 +25,7 @@ const slides = [
 ];
 
 const PromotionalCarousel = () => (
-    <Carousel>
+    <Carousel indicators={false}>
         {slides.map((slide, index) => (
             <Carousel.Item key={index}>
                 <img

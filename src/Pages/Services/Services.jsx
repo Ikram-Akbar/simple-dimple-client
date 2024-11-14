@@ -17,7 +17,6 @@ const Services = () => {
       .get("http://localhost:5000/api/v1/services")
       .then((response) => {
         setServices(response.data);
-        // console.log(response.data);
         setLoading(false);
       })
       .catch((err) => {

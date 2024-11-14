@@ -1,42 +1,58 @@
 import { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-import { FaGoogle,  FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 import toast from 'react-hot-toast';
-
-
+import axios from 'axios';
 
 const Login = () => {
-    const { createUserByGoogle, signInWithEmailPass, } = useAuth();
+    const { createUserByGoogle, signInWithEmailPass } = useAuth();
     const [passwordVisible, setPasswordVisible] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
-    const handleLoginForm = (e) => {
+
+    const handleLoginForm = async (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        signInWithEmailPass(email, password)
-            .then((res) => {
-                console.log(res.data);
-                toast.success("Welcome");
-                navigate("/")
-            })
-            .catch((err) => {
-                toast.error(err.message)
-            })
+
+        try {
+            await signInWithEmailPass(email, password);
+            toast.success("Welcome");
+
+            // JWT Token
+            await axios.post("http://localhost:5000/api/v1/jwt", { email }, { withCredentials: true });
+
+            // Redirect to location or  home page
+            navigate(location?.state ? location?.state : "/");
+
+        } catch (err) {
+            toast.error(err.message);
+        }
     };
+
     const handleGoogleLogin = () => {
         createUserByGoogle()
-            .then(() => {
+            .then((res) => {
+                const email = res.user.email;
+                axios.post("http://localhost:5000/api/v1/jwt", { email }, { withCredentials: true });
+
                 toast.success("Welcome");
-                navigate("/");
+                // Redirect to location or  home page
+                // navigate(location?.state ? location?.state : "/");
+                
             })
-    }
+            .catch(err => {
+                toast.error(err.message);
+            });
+    };
 
     return (
         <Container className="mt-5">
@@ -48,7 +64,7 @@ const Login = () => {
                     <Form onSubmit={handleLoginForm}>
                         <Form.Group controlId="formBasicEmail" className="mb-3">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control name='email' type="email" placeholder="Enter email" />
+                            <Form.Control name='email' type="email" placeholder="Enter email" required />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPassword" className="mb-3">
@@ -58,11 +74,13 @@ const Login = () => {
                                     name='password'
                                     type={passwordVisible ? "text" : "password"}
                                     placeholder="Enter password"
+                                    required
                                 />
                                 <Button
                                     variant="outline-secondary"
                                     onClick={togglePasswordVisibility}
                                     className="input-group-text"
+                                    aria-label={passwordVisible ? "Hide password" : "Show password"}
                                 >
                                     {passwordVisible ? <FaEyeSlash /> : <FaEye />}
                                 </Button>
@@ -79,7 +97,6 @@ const Login = () => {
                             <Button onClick={handleGoogleLogin} variant="outline-danger" className="w-100 me-2">
                                 <FaGoogle /> Google
                             </Button>
-                            
                         </div>
 
                         <p className="text-center">

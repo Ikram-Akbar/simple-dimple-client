@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
     const createUserByEmailPass = async (email, pass) => {
         setLoading(true);
         const userCredentials = await createUserWithEmailAndPassword(auth, email, pass);
-        await sendEmailVerification(userCredentials.user);
+        // await sendEmailVerification(userCredentials.user);
         await signOut(auth);
     };
 
