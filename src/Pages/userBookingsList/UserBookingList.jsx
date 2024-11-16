@@ -10,7 +10,7 @@ const UserBookingList = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/booking?email=${user?.email}`)
+        axios.get(`https://simple-dimple-server.vercel.app/api/v1/booking?email=${user?.email}`)
             .then(res => {
                 setBookings(res.data);
             })
@@ -39,14 +39,14 @@ const UserBookingList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/api/v1/booking/${id}`)
+                axios.delete(`https://simple-dimple-server.vercel.app/api/v1/booking/${id}`)
                     .then(() => {
                         setBookings(bookings.filter(booking => booking._id !== id));
                     })
                     .catch(err => {
                         console.log(err);
                     });
-                
+
                 swalWithBootstrapButtons.fire({
                     title: "Deleted!",
                     text: "Your file has been deleted.",

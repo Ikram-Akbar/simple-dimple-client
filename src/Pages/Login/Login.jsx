@@ -11,7 +11,6 @@ const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
@@ -28,7 +27,7 @@ const Login = () => {
             toast.success("Welcome");
 
             // JWT Token
-            await axios.post("http://localhost:5000/api/v1/jwt", { email }, { withCredentials: true });
+            await axios.post("https://simple-dimple-server.vercel.app/api/v1/jwt", { email }, { withCredentials: true });
 
             // Redirect to location or  home page
             navigate(location?.state ? location?.state : "/");
@@ -42,12 +41,12 @@ const Login = () => {
         createUserByGoogle()
             .then((res) => {
                 const email = res.user.email;
-                axios.post("http://localhost:5000/api/v1/jwt", { email }, { withCredentials: true });
+                axios.post("https://simple-dimple-server.vercel.app/api/v1/jwt", { email }, { withCredentials: true });
 
                 toast.success("Welcome");
                 // Redirect to location or  home page
                 // navigate(location?.state ? location?.state : "/");
-                
+
             })
             .catch(err => {
                 toast.error(err.message);

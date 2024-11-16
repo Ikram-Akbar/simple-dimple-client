@@ -7,14 +7,14 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const BookingForm = () => {
-    const { service } = useService(); 
+    const { service } = useService();
     const { user } = useAuth();
     // Local state to manage form data
     const [formData, setFormData] = useState({
         name: user?.displayName || '',
         email: user?.email || '',
         serviceName: service?.name || '',
-        price:service?.price || 0,
+        price: service?.price || 0,
         category: service?.category || '',
         deliveryMode: 'On-site', // Default delivery mode
         duration: service?.duration || '',
@@ -53,10 +53,10 @@ const BookingForm = () => {
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form Submitted:', formData);
-        axios.post("http://localhost:5000/api/v1/booking", formData)
+        // console.log('Form Submitted:', formData);
+        axios.post("https://simple-dimple-server.vercel.app/api/v1/booking", formData)
             .then((res) => {
-                console.log("Booking successful:", res.data.insertedId);
+                // console.log("Booking successful:", res.data.insertedId);
                 if (res.data.insertedId) {
                     toast.success("Thank You ! booking added")
                 }
@@ -165,7 +165,7 @@ const BookingForm = () => {
                                 name="price"
                                 defaultValue={formData?.price}
                                 readOnly
-                                
+
                             />
                         </Form.Group>
                     </Col>

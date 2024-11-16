@@ -11,13 +11,13 @@ const CusReqForm = () => {
         const email = user?.email;
 
         try {
-            const response = await axios.post("http://localhost:5000/api/v1/custom-requests", {
+            await axios.post("https://simple-dimple-server.vercel.app/api/v1/custom-requests", {
                 name: name.value,
                 requirement: requirement.value,
                 date: date.value,
                 email,
             });
-            console.log(response);
+           
             alert("Request submitted successfully!");
         } catch (error) {
             console.error("Submission error:", error);

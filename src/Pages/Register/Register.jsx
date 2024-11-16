@@ -43,7 +43,7 @@ const Register = () => {
         setError("");
 
         const userInfo = { name, email, phone, photoUrl, password };
-        console.log(userInfo);
+        // console.log(userInfo);
         createUserByEmailPass(email, password)
             .then(() => {
                 Swal.fire({

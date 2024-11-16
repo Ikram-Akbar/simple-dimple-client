@@ -23,7 +23,7 @@ const ServiceWithFilter = () => {
         setLoading(true);
 
         axios
-            .get("http://localhost:5000/api/v1/services")
+            .get("https://simple-dimple-server.vercel.app/api/v1/services")
             .then((response) => {
                 setAllServices(response.data);
                 setServices(response.data); // Initially show all services
@@ -38,7 +38,7 @@ const ServiceWithFilter = () => {
 
     const fetchCategories = () => {
         axios
-            .get("http://localhost:5000/api/v1/categories")
+            .get("https://simple-dimple-server.vercel.app/api/v1/categories")
             .then((response) => {
                 setCategories(response.data);
             })

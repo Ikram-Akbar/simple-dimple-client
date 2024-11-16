@@ -14,7 +14,7 @@ const Services = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/services")
+      .get("https://simple-dimple-server.vercel.app/api/v1/services")
       .then((response) => {
         setServices(response.data);
         setLoading(false);
@@ -39,7 +39,7 @@ const Services = () => {
       <h2 className="text-center my-3">Our Services</h2>
       <Row>
         {services.map((service) => (
-          <Col md={4}  key={service.id}>
+          <Col md={4} key={service.id}>
             <Card className="mb-4 shadow-sm shadow-lg p-2">
               <Card.Img
                 style={{ objectFit: "cover", height: "200px" }}
@@ -92,7 +92,7 @@ const Services = () => {
       </Row>
       <Row>
         <Col className="border m-2">
-          <FindCustomService/>
+          <FindCustomService />
         </Col>
       </Row>
     </Container>

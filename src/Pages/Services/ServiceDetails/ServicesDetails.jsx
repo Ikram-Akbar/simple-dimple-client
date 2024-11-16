@@ -10,24 +10,24 @@ import { useService } from "../../Hooks/useService";
 const ServicesDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const {service, setService} = useService();
+    const { service, setService } = useService();
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/api/v1/services/${id}`)
+            .get(`https://simple-dimple-server.vercel.app/api/v1/services/${id}`)
             .then((response) => {
                 setService(response.data);
             })
             .catch((error) => {
                 console.error("Error fetching service details:", error);
             });
-    }, [id,setService]);
+    }, [id, setService]);
 
     if (!service) {
         return <Loading />;
     }
 
-    
+
     const handleBackToHome = () => {
         navigate("/");
     };
@@ -104,7 +104,7 @@ const ServicesDetails = () => {
                                 {service.features.map((feature, index) => (
                                     <div key={index} className="d-flex  align-items-center">
                                         <FaCheckCircle className="mr-2" />
-                                        <ListGroup.Item  className="border-0">
+                                        <ListGroup.Item className="border-0">
 
                                             {feature}
                                         </ListGroup.Item>
@@ -125,7 +125,7 @@ const ServicesDetails = () => {
                     >
                         <Button
                             onClick={handleBooking}
-                            variant="primary"  className="w-100 shadow-lg rounded-pill mb-3">
+                            variant="primary" className="w-100 shadow-lg rounded-pill mb-3">
                             <FaStar className="me-2" />
                             Book Service
                         </Button>

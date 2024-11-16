@@ -15,13 +15,13 @@ const ContactUs = () => {
         const { name, email, message } = e.target.elements;
 
         try {
-            await axios.post("http://localhost:5000/api/v1/contactEmail", {
+            await axios.post("https://simple-dimple-server.vercel.app/api/v1/contactEmail", {
                 clientName: name.value,
                 clientEmail: email.value,
                 message: message.value,
             })
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     if (res.data.insertedId) {
                         toast.success("Thank You , We will contact with you very soon !! ");
                         return navigate("/")
